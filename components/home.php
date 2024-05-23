@@ -38,7 +38,7 @@
                     <i class="fas fa-caret-down"></i>
                 </div>
                 <div class="dropdown-menu" id="profile-dropdown">
-                    <a href="/edit-profile">Edit Profile</a>
+                    <a href="./profile/profile.php">Edit Profile</a>
                     <a href="./database/logout.php">Logout</a>
                 </div>
             </div>
