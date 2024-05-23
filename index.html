@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Twitter | Homepage</title>
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/all.css">
+</head>
+
+<body>
+
+    <div class="main-flex-container">
+        <div class="left-flex-container flex-item">
+            <div class="nav-links">
+                <ul>
+                    <li class="nav-items logo"><a href="#"><i class="fab fa-twitter"></i></a></li>
+                    <li class="nav-items current-page"><a href="#"><i class="fas fa-home"></i> Home</a></li>
+                    <li class="nav-items"><a href="#"><i class="fas fa-hashtag"></i> Explore</a></li>
+                    <li class="nav-items"><a href="#"><i class="far fa-bell"></i> Notifications</a></li>
+                    <li class="nav-items"><a href="#"><i class="far fa-envelope"></i> Messages</a></li>
+                    <li class="nav-items"><a href="#"><i class="far fa-bookmark"></i> Bookmarks</a></li>
+                    <li class="nav-items"><a href="#"><i class="far fa-list-alt"></i> Lists</a></li>
+                    <li class="nav-items"><a href="#"><i class="far fa-user"></i> Profile</a></li>
+                    <li class="nav-items"><a href="#"><i class="fas fa-ellipsis-h more-icon"></i> More</a></li>
+                </ul>
+            </div>
+            <div class="tweet"><a href="./components/auth/login.php">Login</a></div>
+            <!--<div class="profile-box">
+                <img src="./img/profile.jpg" alt="profile">
+                <div class="profile-link">
+                    <p class="full-name">David Herbert</p>
+                    <p class="user-name">@king.david</p>
+                </div>
+                <div class="options-icon"><i class="fas fa-caret-down"></i></div>
+            </div>-->
+        </div>
+
+        <div class="center-flex-container flex-item">
+            <div class="home">
+                <h1>Home</h1>
+                <i class="fas fa-magic"></i>
+            </div>
+
+            <div class="post-tweet">
+                <form action="">
+                    <div class="form-group-1">
+                        <img src="data:image/jpeg;base64,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"
+                            alt="profile-pics">
+                        <input type="text" placeholder="What's happening?">
+                    </div>
+                    <div class="form-group-2">
+                        <div class="post-icons">
+                            <i class="far fa-image"></i>
+                            <i class="far fa-file-image"></i>
+                            <i class="fas fa-stream"></i>
+                            <i class="far fa-smile"></i>
+                            <i class="far fa-calendar-check"></i>
+                        </div>
+                        <a href="./components/auth/login.php"><button class="btn" type="submit">Tweet</button></a>
+                    </div>
+                </form>
+
+            </div>
+            <!-- User Content -->
+            <div class="tweets">
+                <div class="user-pics"><img src="./img/user3.jpg" alt="user3"></div>
+                <div class="user-content-box">
+                    <div class="user-names">
+                        <h1 class="full-name">Olivia Brent</h1>
+                        <p class="user-name">@iamolivia</p>
+                        <p class="time"> . 58mins</p>
+                    </div>
+
+                    <div class="user-content">
+                        <p>We've gotta send kids back to school so one day they can be doctors and scientists, and everyone can ignore them.</p>
+                    </div>
+
+                    <div class="content-icons">
+                        <i class="far fa-comment blue"> 0</i>
+                        <i class="fas fa-retweet green retweet-icon"> 0</i>
+                        <i class="far fa-heart red like-icon">0</i>
+                        <i class="fas fa-chevron-up blue"></i>
+                    </div>
+                </div>
+            </div>
+            <div class="tweets">
+                <div class="user-pics"><img src="./img/user2.jpg" alt="user2"></div>
+                <div class="user-content-box">
+                    <div class="user-names">
+                        <hi class="full-name">Carole Chavez</hi>
+                        <p class="user-name">@carolechavez</p>
+                        <p class="time"> . 1hr</p>
+                    </div>
+
+                    <div class="user-content">
+                        <p>If the whole world was blind, how many people would you impress?
+                            <a href="#">#100daysofcode</a> <a href="#">#javascript</a> <a href="#">#womenwhocode</a></p>
+                    </div>
+
+                    <div class="content-icons">
+                        <i class="far fa-comment blue"> 0</i>
+                        <i class="fas fa-retweet green retweet-icon"> 0</i>
+                        <i class="far fa-heart red like-icon">0</i>
+                        <i class="fas fa-chevron-up blue"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tweets">
+                <div class="user-pics"><img src="./img/user1.jpg" alt="user1"></div>
+                <div class="user-content-box">
+                    <div class="user-names">
+                        <hi class="full-name">Eric Alvarez</hi>
+                        <p class="user-name">@eric_alvarez</p>
+                        <p class="time"> . 2hrs</p>
+                    </div>
+
+                    <div class="user-content">
+                        <p>Eat. Code, Sleep. repeat! <a href="#">#CodeNewbie</a> <a href="#">#100DaysOfCode</a></p>
+                        <img src="./img/content1.jpg" alt="content1">
+                    </div>
+
+                    <div class="content-icons">
+                        <i class="far fa-comment blue"> 0</i>
+                        <i class="fas fa-retweet green retweet-icon"> 0</i>
+                        <i class="far fa-heart red like-icon">0</i>
+                        <i class="fas fa-chevron-up blue"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="tweets">
+                <div class="user-pics"><img src="./img/user4.jpg" alt="user4"></div>
+                <div class="user-content-box">
+                    <div class="user-names">
+                        <hi class="full-name">Harry Wilson</hi>
+                        <p class="user-name">@Harrywilson</p>
+                        <p class="time"> . 4hrs</p>
+                    </div>
+
+                    <div class="user-content">
+                        <p>There's no clear correlation between your background and what you are going to achieve in life..</p>
+                    </div>
+
+                    <div class="content-icons">
+                        <i class="far fa-comment blue"> 0</i>
+                        <i class="fas fa-retweet green retweet-icon"> 0</i>
+                        <i class="far fa-heart red like-icon">0</i>
+                        <i class="fas fa-chevron-up blue"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <section class="follow-users-box">
+
+                <div class="follow-header">
+                    <h1 class="main-text">Who to follow</h1>
+                    <i class="fas fa-chevron-down"></i>
+                </div>
+
+                <div class="follow-user">
+                    <div class="related-followers">
+                        <p class="sub-text"><i class="fas fa-user"></i> Ellie Jamie and 20 others follow</p>
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="user-pics"><img src="./img/user6.jpg" alt="user6">
+                        </div>
+
+                        <div class="user-profile-content">
+                            <div class="title-container">
+                                <div class="user-names">
+                                    <div class="full-name">
+                                        <h1 class="main-text">Linda Shelton #BlackLivesMatter</h1>
+                                    </div>
+                                    <div class="user-name">
+                                        <p class="sub-text">@Linda_shelton</p>
+                                    </div>
+                                </div>
+
+                                <div class="follow-btn"><a href="#">follow</a></div>
+
+                            </div>
+                            <div class="bio-container">
+                                <p><a href="#">♯WordPress/Php</a> Geek Smiling face with sunglasses <a href="#">♯JavascriptDeveloper</a> Slightly smiling face <a href="#">♯ToolsCreator</a> <a href="#">♯http://webscreenshot.now.sh</a> Always ready to help
+                                    with code Handshake</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="follow-user">
+                    <div class="related-followers">
+                        <p class="sub-text"><i class="fas fa-user"></i> JavaScript Ninja and 200 others follow</p>
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="user-pics"><img src="./img/user7.jpg" alt="user7">
+                        </div>
+
+                        <div class="user-profile-content">
+                            <div class="title-container">
+                                <div class="user-names">
+                                    <div class="full-name">
+                                        <h1 class="main-text">Gavin Johnson #JavaScript</h1>
+                                    </div>
+                                    <div class="user-name">
+                                        <p class="sub-text">@Gavinjohnson</p>
+                                    </div>
+                                </div>
+
+                                <div class="follow-btn"><a href="#">follow</a></div>
+
+                            </div>
+                            <div class="bio-container">
+                                <a href="#">♯JavascriptDeveloper</a> Avocado | Fire Speaker | Fire Teacher | Youtube - <a href="#">http://bit.ly/jqqyt</a> |<a href="#"> @twilio</a> Champion | Motto: <a href="#">#LearnBuildTeach</a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="follow-user">
+                    <div class="related-followers">
+                        <p class="sub-text"><i class="fas fa-user"></i> The Code Boy and 50 others follow</p>
+                    </div>
+
+                    <div class="user-profile">
+                        <div class="user-pics"><img src="./img/user8.jpg" alt="user8">
+                        </div>
+
+                        <div class="user-profile-content">
+                            <div class="title-container">
+                                <div class="user-names">
+                                    <div class="full-name">
+                                        <h1 class="main-text">William D Gallucci</h1>
+                                    </div>
+                                    <div class="user-name">
+                                        <p class="sub-text">@Iamwilliamd_shelton</p>
+                                    </div>
+                                </div>
+
+                                <div class="follow-btn"><a href="#">follow</a></div>
+
+                            </div>
+                            <div class="bio-container">
+                                <p>software engineer at
+                                    <a href="#">@soonastudios</a> . career switcher. vue + rails. tweeting about tech, books, startups, and big ideas. writing @ <a href="#">http://jamestucker.dev.</a></p>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="follow-footer">
+                    <a href="#">Show more</a>
+                </div>
+
+            </section>
+
+            <div class="tweets">
+                <div class="user-pics"><img src="./img/user5.jpg" alt="user5"></div>
+                <div class="user-content-box">
+                    <div class="user-names">
+                        <hi class="full-name">Nora Chao</hi>
+                        <p class="user-name">@chaonora</p>
+                        <p class="time"> . 6hrs</p>
+                    </div>
+
+                    <div class="user-content">
+                        <p>Time to settle down and play my favourite game IN THE WORLD Earth globe europe-africa</p>
+
+                        <p> Haven’t played for about a month, too busy coding. So tired this evening though. Poker tournament with husband later..</p>
+                        <img src="./img/content5.jpg" alt="content5">
+                    </div>
+
+                    <div class="content-icons">
+                        <i class="far fa-comment blue"> 0</i>
+                        <i class="fas fa-retweet green retweet-icon"> 0</i>
+                        <i class="far fa-heart red like-icon">0</i>
+                        <i class="fas fa-chevron-up blue"></i>
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="pagnation">
+                <a href="#">Load more</a>
+            </div>
+
+        </div>
+
+
+
+        <div class="right-flex-container flex-item">
+            <div class="search-box">
+                <i class="fas fa-search"></i>
+                <input type="text" placeholder="Search Twitter">
+            </div>
+
+            <div class="trends">
+                <ul>
+                    <li class="nav-list header">
+                        <h2>Trends for you</h2>
+                        <i class="fas fa-cog">
+          </i>
+                        <li class="nav-list">
+                            <div class="trend-list">
+                                <p class="sub-text">Trending in Naija</p>
+                                <p class="main-text">#BBNaija</p>
+                                <p class="sub-text">274K Tweets</p>
+                            </div>
+                            <div class="trend-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </li>
+                        <li class="nav-list">
+                            <div class="trend-list">
+                                <p class="sub-text">Trending in Naija</p>
+                                <p class="main-text">#TaylorSwift</p>
+                                <p class="sub-text">154K Tweets</p>
+                            </div>
+                            <div class="trend-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </li>
+                        <li class="nav-list">
+                            <div class="trend-list">
+                                <p class="sub-text">Trending in Naija</p>
+                                <p class="main-text">#Lover</p>
+                                <p class="sub-text">135K Tweets</p>
+                            </div>
+                            <div class="trend-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </li>
+                        <li class="nav-list">
+                            <div class="trend-list">
+                                <p class="sub-text">Trending in Naija</p>
+                                <p class="main-text">#Dora</p>
+                                <p class="sub-text">124K Tweets</p>
+                            </div>
+                            <div class="trend-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </li>
+                        <li class="nav-list">
+                            <div class="trend-list">
+                                <p class="sub-text">Trending in Naija</p>
+                                <p class="main-text">#TGIF</p>
+                                <p class="sub-text">43K Tweets</p>
+                            </div>
+                            <div class="trend-icon">
+                                <i class="fas fa-chevron-down"></i>
+                            </div>
+                        </li>
+
+
+                        <li class="nav-list"><a href="#">Show more</a></li>
+                </ul>
+            </div>
+
+            <div class="right-footer">
+                <div class="footer-links">
+                    <a href="#" class="sub-text">Terms</a>
+                    <a href="#" class="sub-text">Privacy policy</a>
+                    <a href="#" class="sub-text">Ads info</a>
+                    <a href="#" class="sub-text">more</a>
+                    <i class="fas fa-chevron-down sub-text"></i>
+                </div>
+                <div class="footer-copyright">
+                    <p class="sub-text">&copy; 2020 Twitter, Inc.</p>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- Comment Pop-up Modal -->
+    <div id="commentModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Leave a Comment</h2>
+            <textarea id="commentText" rows="4" placeholder="Write your comment here..."></textarea>
+            <button id="submitComment" class="btn">Submit</button>
+        </div>
+    </div>
+
+
+</body>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const likeIcons = document.querySelectorAll('.like-icon');
+        const retweetIcons = document.querySelectorAll('.retweet-icon');
+
+        likeIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                if (icon.classList.contains('fas')) {
+                    icon.classList.remove('fas');
+                    icon.classList.add('far');
+                    icon.textContent = parseInt(icon.textContent) - 1;
+                } else {
+                    icon.classList.remove('far');
+                    icon.classList.add('fas');
+                    icon.textContent = parseInt(icon.textContent) + 1;
+                }
+            });
+        });
+
+        retweetIcons.forEach(icon => {
+            icon.addEventListener('click', () => {
+                icon.textContent = parseInt(icon.textContent) + 1;
+            });
+        });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+        var modal = document.getElementById("commentModal");
+
+        var commentIcons = document.querySelectorAll(".fa-comment.blue");
+
+        var span = document.getElementsByClassName("close")[0];
+
+        commentIcons.forEach(function(icon) {
+            icon.addEventListener("click", function() {
+                modal.style.display = "block";
+            });
+        });
+
+        span.addEventListener("click", function() {
+            modal.style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        });
+    });
+</script>
+
+</html>
