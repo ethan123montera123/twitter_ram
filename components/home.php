@@ -1,3 +1,19 @@
+<?php
+    include "./database/connection.php";
+    if (!$conn) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
+
+    $sel = "SELECT * FROM login_twitter";
+    $query = mysqli_query($conn, $sel);
+
+    if (!$query) {
+        die("Query failed: " . mysqli_error($conn));
+    }
+
+    $result = mysqli_fetch_assoc($query);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -31,8 +47,9 @@
               <div class="profile-box">
                 <img src="../img/profile.jpg" alt="profile">
                 <div class="profile-link">
-                    <p class="full-name">David Herbert</p>
-                    <p class="user-name">@king.david</p>
+                    <p class="full-name">
+                        <?php echo htmlspecialchars($result['username']);?>
+                    </p>
                 </div>
                 <div class="options-icon" onclick="toggleDropdown()">
                     <i class="fas fa-caret-down"></i>
